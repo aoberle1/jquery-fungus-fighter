@@ -31,6 +31,10 @@ function render(){
     $('.ap-text').text(currentAttackPoints)
     $('.hp-text').text(currentHP)
 
+    if( currentHP <= 0 ){
+        $('.enemy').addClass('freaky-fungus dead')
+        $('.freaky-fungus.walk').removeClass('freaky-fungus walk')
+    }
 }
 
 function scepterAttack(event){
@@ -39,9 +43,7 @@ function scepterAttack(event){
     currentAttackPoints -= 12;
     currentHP -= 14;
 
-    if( currentHP <= 0 ){
-        $('.enemy').addClass('freaky-fungus dead')
-    }
+
 
     render();
 }

@@ -5,11 +5,12 @@ $(document).ready(onReady);
 // Example:
 // let fungusHP = 100;
 
+// setting global variables with starting values set to 100
 let currentAttackPoints = 100;
 let currentHP = 100;
 
 function onReady() {
-    console.log( 'jq' );
+    // calls render function when page is ready
     render();
     
     // Make sure you check the index.html file! 
@@ -44,6 +45,7 @@ function render(){
     if (currentAttackPoints <= 0){
         $('.enemy').addClass('freaky-fungus jump');
         $('.freaky-fungus.walk').removeClass('freaky-fungus walk');
+        // adds the attribute disabled (set to true) buttons
         $('button').attr('disabled', true);
     }
 }
@@ -51,8 +53,10 @@ function render(){
 function scepterAttack(event){
     event.preventDefault();
     console.log( currentAttackPoints );
+    // subtracts 12 from currentAttackPoints each time function called
     currentAttackPoints -= 12;
     currentHP -= 14;
+    // calls render function each time button is pressed
     render();
 }
 

@@ -16,10 +16,10 @@ function onReady() {
     // There are lots of buttons and things ready for you to hook into here!
     
     // registering event handlers for button clicks
-    $('.arcane-scepter').on( 'click', scepterAttack )
-    $('.entangle').on( 'click', entangleAttack )
-    $('.dragon-blade').on( 'click', dragonBladeAttack )
-    $('.star-fire').on( 'click', starFireAttack )
+    $('.arcane-scepter').on( 'click', scepterAttack );
+    $('.entangle').on( 'click', entangleAttack );
+    $('.dragon-blade').on( 'click', dragonBladeAttack );
+    $('.star-fire').on( 'click', starFireAttack );
 
     // 🧠 Remember
     // - Handle events that ->
@@ -30,20 +30,21 @@ function onReady() {
 function render(){
 
     // setting the value of these elements to these variables
-    $('.ap-text').text(currentAttackPoints)
-    $('.hp-text').text(currentHP)
+    $('.ap-text').text(currentAttackPoints);
+    $('.hp-text').text(currentHP);
 
     // if statement setup
     if( currentHP <= 0 ){
         // adds class freaky-fungus dead
-        $('.enemy').addClass('freaky-fungus dead')
+        $('.enemy').addClass('freaky-fungus dead');
         //removes class freaky-fungus walk completely (removes it from itself)
-        $('.freaky-fungus.walk').removeClass('freaky-fungus walk')
+        $('.freaky-fungus.walk').removeClass('freaky-fungus walk');
     }
 
     if (currentAttackPoints <= 0){
-        $('.enemy').addClass('freaky-fungus jump')
-        $('.freaky-fungus.walk').removeClass('freaky-fungus walk')
+        $('.enemy').addClass('freaky-fungus jump');
+        $('.freaky-fungus.walk').removeClass('freaky-fungus walk');
+        $('button').attr('disabled', true);
     }
 }
 
